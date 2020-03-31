@@ -15,10 +15,24 @@ body {
     font-size: 25;
     font-family: 'Source Code Pro', 'Nanum Gothic Coding', 'Arial';
 }
+
 ul {
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+
+p {
+    margin: 5px;
+    width: 100%;
+}
+
 li {
+    flex: auto;
+    border-style: ridge;
+    border-width: 1px;
+    width: 45%;
     list-style: none;
     font-size: 15;
     font-weight: lighter;
@@ -29,17 +43,25 @@ li {
     justify-content: center;
     flex-wrap: wrap;
 }
-.lista {
+.drop {
+    margin: 10px;
+    background-color: white;
+    position: relative;
+    width: 35%;
+    left: 31%;
+    border-radius: 10px;
+}
+.esquerda {
     font-weight: bold;
     width: 15em;
     height: 30em;
     background-color: rgb(255, 255, 255);
-    border-radius: 2%;
+    border-radius: 20px;
 }
 
 .direita {
     width: 15em;
-    border-radius: 2%;
+    border-radius: 20px;
     background-color: rgb(255, 255, 255);
     margin-left: 2%;
 }

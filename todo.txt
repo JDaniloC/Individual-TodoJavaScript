@@ -1,7 +1,8 @@
-(A) Esse é o primeiro
-segundo
-terceiro
-(a) +casa
-(B) @outro
-(C)
-(D)
+1030 (A) Esse é o primeiro
+2500 segundo
+2355 terceiro
+0106 (a) +casa
+(B) 0270 @outro
+(C) Alguma coisa +projeto
+(D) Outra coisa +projeto
+21102000

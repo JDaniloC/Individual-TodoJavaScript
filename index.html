@@ -5,18 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title> Todo.txt </title>
     <link rel="stylesheet" href="./src/styles/main.css"/>
-    <script src='./src/scripts/functions.js'></script>
+    <script type='module' src='./src/scripts/functions.js'>
+        function abrirArquivo() {
+            console.log("Abriu")
+        } 
+    </script>
 </head>
 <body>
     <input type='file' accept='text/plain' onchange='abrirArquivo(event)'>
+<div class='drop' ondragover="window.dragOver(event)" ondrop="window.drop(event)">
+        Carregar Todo.txt
+    </div>
     <div class='main'>
-        <ul class='lista'>
+        <section class='esquerda'>
             Tarefas
-        </ul>
+            <ul class='tarefas'>
+            </ul>
+        </section>
 
         <section class="direita">
             <div class='tags'> 
                 Funcionalidades
+                <ul id="prioridades">
+                    <p>Prioridades</p>
+                </ul>
+                <ul id="contextos">
+                    <p>Contextos</p>
+                </ul>
+                <ul id="projetos">
+                    <p>Projetos</p>
+                </ul>
             </div>
         </section>
 
