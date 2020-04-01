@@ -8,11 +8,53 @@
 export default function conversorDeTexto(arquivo) {
     /* (1)
      * Recebe o texto do arquivo, quebra em linhas
-     * e devolve organizado.
+     * e devolve organizado e ordenado.
      */
-    var linhas = organizar(arquivo.split("\n"))
+    return ordenar(organizar(arquivo.split('\n')))
+}
 
-    return linhas
+function ordenar(lista) {
+    /*  -> Ordena os itens de acordo com a prioridade/data/hora,
+     * onde os mais recentes aparecererão primeiro.
+     * 1 - Verifica aqueles sem prioridade e adiciona numa lista.
+     *  1.1 - Aqueles sem data e adiciona numa lista.
+     *  1.2 - E aqueles sem hora, adiciona em outra lista.
+     * 2 - Ordena de acordo com a maior prioridade A > Z.
+     *  2.1 - Os com data, onde os mais recentes vem primeiro.
+     *  2.2 - Ordena os sem data de acordo com a hora.
+     * 3 - Cria uma nova lista ordenada do formato: 
+     *  (comPrioridade)(comData)(semData)(semHora)
+     * 
+     * Param comData = Lista de tarefas.
+     * return: Lista ordenada de tarefas.
+     */
+    var comData = []
+    var comHora = []
+    var semHora = []
+    for (var i = 0; i < lista.length; i++) {
+        if (lista[i][1][2] == "") {
+            if (lista[i][1][0] != '') {
+                comData.push(...lista.splice(i, 1))
+            } else if (lista[i][1][1] != '') {
+                comHora.push(...lista.splice(i, 1))
+            } else {
+                semHora.push(...lista.splice(i, 1))
+            }
+            i--
+        }
+    }
+    quicksort(lista, (tarefa) => {
+        var prioridade = tarefa[1][2]
+        return ord(prioridade[1])
+    }, (x, y, inverso) => { return (inverso) ? x > y : x < y })
+    quicksort(comData, dataInverso, (x, y, inverso) => { 
+        return (inverso) ? x < y : x > y 
+    })
+    quicksort(comHora, (tarefa) => {
+        var hora = tarefa[1][1]
+        return parseInt(hora)
+    }, (x, y, inverso) => { return (inverso) ? x < y : x > y })
+    return [...lista, ...comData, ...comHora, ...semHora]
 }
 
 function organizar(lista) {
@@ -158,4 +200,55 @@ function soDigitos(str) {
         }
     }
     return false
+}
+function dataInverso(tarefa) {
+    /* -> Inverte a data para poder comparar qual a maior.
+     * Param data = String, do formato DDMMAAA.
+     * return: String da data invertida.
+     */
+    var data = tarefa[1][0]
+    data = parseInt(data.slice(4) + data.slice(2, 4) + data.slice(0, 2))
+    return data
+}
+const quicksort = (lista, funcao, comparacao) => {
+    /* Quicksort, que recebe uma função para determinar qual é
+     * o maior, e a comparacao serve para dizer se é > ou <
+     */
+    function swap(lista, x, y) {
+        var aux = lista[x]
+        lista[x] = lista[y]
+        lista[y] = aux
+    }
+    function parte(lista, x, y) {
+        var pivo = lista[Math.floor((x + y) / 2)]
+        
+        while (x <= y) {
+            while (comparacao(funcao(lista[x]), funcao(pivo), false)) {
+                x++
+            }
+            while (comparacao(funcao(lista[y]), funcao(pivo), true)) {
+                y--
+            }
+            if (x <= y) {
+                swap(lista, x, y)
+                x++
+                y--
+            }
+        }
+
+        return x
+    }
+    function sort(lista, esquerda, direita) {
+        if (lista.length > 1) {
+            var indice = parte(lista, esquerda, direita)
+            
+            if (indice - 1 > esquerda) {
+                sort(lista, esquerda, indice - 1)
+            }
+            if (indice < direita) {
+                sort(lista, indice, direita)
+            }
+        }
+    }
+    sort(lista, 0, lista.length - 1)
 }

@@ -1,8 +1,13 @@
 1030 (A) Esse é o primeiro
-2500 segundo
-2355 terceiro
-0106 (a) +casa
-(B) 0270 @outro
+0000 quarto +hora
+0230 terceiro +hora
+0706 (a) Esse é o segundo +casa
+1259 (B) Esse vem primeiro @outro
 (C) Alguma coisa +projeto
 (D) Outra coisa +projeto
-21102000
+12122012 0216 O mesmo dia do fim do mundo @outro
+12122012 É o fim do mundo @end
+01042016 Um dia aleatório +outro
+11122012 Um dia antes do fim do mundo @end
+01012013 Sobrevivemos ao fim do mundo @end
+13122012 Um dia após o fim do mundo @end
