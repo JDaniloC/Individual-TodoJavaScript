@@ -5,12 +5,20 @@
 (D) #43FF40
 */
 
-export default function conversorDeTexto(arquivo) {
+/*
+ * (3) Filtragem:
+ *      (a) - Prioridade
+ *      (b) - Contexto
+ *      (c) - Projeto
+ * (4) Salvar o todo.txt
+ */
+
+export default function conversorDeTexto(listaDeString) {
     /* (1)
      * Recebe o texto do arquivo, quebra em linhas
      * e devolve organizado e ordenado.
      */
-    return ordenar(organizar(arquivo.split('\n')))
+    return ordenar(organizar(listaDeString))
 }
 
 function ordenar(lista) {
@@ -89,7 +97,7 @@ function organizar(lista) {
             contextoProjeto.push(task.pop().trim())
         }
 
-        resultado = [...resultado, [task, [data, hora, prioridade, ...contextoProjeto]]]
+        resultado = [...resultado, [task.join(' '), [data, hora, prioridade, ...contextoProjeto]]]
     }); 
     return resultado
 }

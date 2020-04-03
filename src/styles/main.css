@@ -38,12 +38,18 @@ li {
     font-weight: lighter;
 }
 
+.app {
+    transition: 1s opacity;
+}
+
 .main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .drop {
+    justify-items: center;
     margin: 10px;
     background-color: white;
     position: relative;
@@ -51,19 +57,68 @@ li {
     left: 31%;
     border-radius: 10px;
 }
+
 .esquerda {
     font-weight: bold;
+    min-height: 10em;
     width: 15em;
-    height: 30em;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
 }
 
 .direita {
     width: 15em;
+    min-height: 10em;
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
     margin-left: 2%;
+}
+
+.editar {
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 1;
+    margin-top: 15%;
+    margin-left: 20%;
+
+    min-height: 10em;
+    max-width: 25em;
+
+    background-color: #FFF;
+    border-style: groove;
+    box-shadow: 1px 0px 6px 0px black;
+
+}
+
+#load {
+    position: relative;
+    left: 10%;
+}
+
+#entradaEditar {
+    width: 600px;
+    font-size: 25;
+    height: 350px;
+    min-height: 220px;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+#entrada {
+    width: 50em;
+    border-style: groove;
+    height: 2em;
+}
+
+#buttonEntrada {
+    height: 2em;
+    border-style: groove;
+}
+
+#buttonTarefa {
+    float: right;
+    border-style: outset;
 }
 
 @media screen and (max-width: 780px) {

@@ -12,32 +12,47 @@
     </script>
 </head>
 <body>
-    <input type='file' accept='text/plain' onchange='abrirArquivo(event)'>
-<div class='drop' ondragover="window.dragOver(event)" ondrop="window.drop(event)">
-        Carregar Todo.txt
+    <div class="editar">
+        <textarea id="entradaEditar">  </textarea>
+        <input id="buttonEntrada" type='button' value='Salvar' onclick="salvarTarefa()">
     </div>
-    <div class='main'>
-        <section class='esquerda'>
-            Tarefas
-            <ul class='tarefas'>
-            </ul>
-        </section>
 
-        <section class="direita">
-            <div class='tags'> 
-                Funcionalidades
-                <ul id="prioridades">
-                    <p>Prioridades</p>
-                </ul>
-                <ul id="contextos">
-                    <p>Contextos</p>
-                </ul>
-                <ul id="projetos">
-                    <p>Projetos</p>
-                </ul>
+    <div class="app">
+        <div class="entry">
+            <input id='entrada' type="text" placeholder="Adicionar tarefa">
+            <input id='buttonEntrada' type="button" value="Adicionar" onclick="adicionarTarefa()">
+        </div>
+        <div class="loadFile">
+            <div class='drop' ondragover="window.dragOver(event)" ondrop="window.drop(event)">
+                Arraste aqui <br>
+                Carregar Todo.txt
+                <input id='load' type='file' accept='text/plain' onchange='abrirArquivo(event)'>
             </div>
-        </section>
-
+        </div>
+        <div class='main'>
+            <section class='esquerda'>
+                Tarefas
+                <ul class='tarefas'>
+                </ul>
+            </section>
+    
+            <section class="direita">
+                <div class='tags'> 
+                    <strong>Funcionalidades</strong>
+                        
+                    <p>Prioridades</p>
+                        <ul id="prioridades">
+                        </ul>
+                    <p>Contextos</p>
+                        <ul id="contextos">
+                        </ul>
+                    <p>Projetos</p>
+                        <ul id="projetos">
+                        </ul>
+                </div>
+            </section>
+    
+        </div>
     </div>
 </body>
 </html>
