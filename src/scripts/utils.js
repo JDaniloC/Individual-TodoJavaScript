@@ -6,10 +6,6 @@
 */
 
 /*
- * (3) Filtragem:
- *      (a) - Prioridade
- *      (b) - Contexto
- *      (c) - Projeto
  * (4) Salvar o todo.txt
  */
 
@@ -50,7 +46,7 @@ function ordenar(lista) {
             }
             i--
         }
-    }
+    } // Não está ordenando as prioridades iguais por data/hora
     quicksort(lista, (tarefa) => {
         var prioridade = tarefa[1][2]
         return ord(prioridade[1])

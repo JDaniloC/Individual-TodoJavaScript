@@ -48,13 +48,17 @@ li {
     flex-wrap: wrap;
 }
 
+.load_save {
+    display: flex;
+    justify-content: center;
+}
+
 .drop {
     justify-items: center;
     margin: 10px;
     background-color: white;
     position: relative;
     width: 35%;
-    left: 31%;
     border-radius: 10px;
 }
 
@@ -91,6 +95,41 @@ li {
 
 }
 
+#aDownload {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#download {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 50px;
+
+    justify-items: center;
+    margin: 10px;
+    position: relative;
+    width: 35%;
+    border-radius: 10px;
+}
+
+#prioridades, #contextos, #projetos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#prioridades button {
+    width: 45%;
+}
+#contextos button {
+    width: 45%;
+}
+#projetos button {
+    width: 45%;
+}
+
 #load {
     position: relative;
     left: 10%;
@@ -119,6 +158,10 @@ li {
 #buttonTarefa {
     float: right;
     border-style: outset;
+}
+
+#download:hover {
+    background-color: royalblue;
 }
 
 @media screen and (max-width: 780px) {

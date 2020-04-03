@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title> Todo.txt </title>
     <link rel="stylesheet" href="./src/styles/main.css"/>
-    <script type='module' src='./src/scripts/functions.js'>
-        function abrirArquivo() {
-            console.log("Abriu")
-        } 
-    </script>
+    <script type='module' src='./src/scripts/functions.js'></script>
 </head>
 <body>
     <div class="editar">
@@ -18,17 +14,23 @@
     </div>
 
     <div class="app">
+
         <div class="entry">
             <input id='entrada' type="text" placeholder="Adicionar tarefa">
             <input id='buttonEntrada' type="button" value="Adicionar" onclick="adicionarTarefa()">
         </div>
-        <div class="loadFile">
+
+        <div class="load_save">
             <div class='drop' ondragover="window.dragOver(event)" ondrop="window.drop(event)">
                 Arraste aqui <br>
                 Carregar Todo.txt
                 <input id='load' type='file' accept='text/plain' onchange='abrirArquivo(event)'>
             </div>
+            <button id='download' onclick="download()"> 
+                <strong> <a href='' id='aDownload'>Download</a> </strong> 
+            </button>
         </div>
+
         <div class='main'>
             <section class='esquerda'>
                 Tarefas
@@ -41,18 +43,18 @@
                     <strong>Funcionalidades</strong>
                         
                     <p>Prioridades</p>
-                        <ul id="prioridades">
-                        </ul>
+                        <div id="prioridades">
+                        </div>
                     <p>Contextos</p>
-                        <ul id="contextos">
-                        </ul>
+                        <div id="contextos">
+                        </div>
                     <p>Projetos</p>
-                        <ul id="projetos">
-                        </ul>
+                        <div id="projetos">
+                        </div>
                 </div>
             </section>
-    
         </div>
+
     </div>
 </body>
 </html>
