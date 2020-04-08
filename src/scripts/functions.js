@@ -89,7 +89,7 @@ function removerTarefa(lista, indice) {
     render()
 }
 
-function filtrar(funcionalidade, filtro) {
+function filtrar(funcionalidade, filtro, botao) {
     // Filtra as tarefas
     let lista;
     switch (funcionalidade) {
@@ -103,7 +103,15 @@ function filtrar(funcionalidade, filtro) {
             lista = listaDePrioridades[filtro] 
             break;
     }
-    listar(lista, false)
+    
+    if (filtrando == true) {
+        lista = [...lista, ...window.filtro.filter((elemento) => { 
+            return lista.indexOf(elemento) == -1
+        })]
+    } else {
+        filtrando = true
+    }
+    window.filtro = listar(lista, false)
 }
 
 function adicionaFiltro(id, novo) {
@@ -112,15 +120,16 @@ function adicionaFiltro(id, novo) {
      * e adiciona uma nova Li na Ul da ID
      */
     const contexto = document.querySelector(`#${id}`)
-    var novaLinha = document.createElement('button')
+    var botao = document.createElement('button')
 
-    novaLinha.style.flex = 'auto'
-    novaLinha.addEventListener('click', () => {
+    botao.style.flex = 'auto'
+    botao.addEventListener('click', () => {
+        botao.style.borderStyle = 'inset'
         filtrar(id, novo)
     })
-    novaLinha.innerHTML = novo
+    botao.innerHTML = novo
 
-    contexto.appendChild(novaLinha)
+    contexto.appendChild(botao)
 }
 
 function adicionaLinhaTarefas(lista, texto) {
@@ -137,9 +146,10 @@ function adicionaLinhaTarefas(lista, texto) {
         }).join(' ') + 
         " " + texto[0] + " " + 
         texto[1].slice(3).join(' ')
+    tarefa = tarefa.trim()
     novaLinha.innerHTML = tarefa
     novaLinha.style.overflowWrap = 'break-word'
-    lista.push(tarefa.trim())
+    lista.push(tarefa)
 
     switch (texto[1][2]) {
         case '(A)':
