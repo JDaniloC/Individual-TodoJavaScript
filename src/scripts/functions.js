@@ -6,8 +6,7 @@ let listaDePrioridades = {}
 let listaDeContextos = {}
 let listaDeProjetos = {}
 const intensidade = 40
-
-// Verificar o deletar (parece está deletando o errado) e parar de filtrar
+let filtrando = false
 
 window.abrirBarra = function abrirBarra() {
     // Abre/fecha a barra de navegação
@@ -91,6 +90,7 @@ function removerTarefa(lista, indice) {
 }
 
 function filtrar(funcionalidade, filtro) {
+    // Filtra as tarefas
     let lista;
     switch (funcionalidade) {
         case "projetos":
@@ -106,7 +106,7 @@ function filtrar(funcionalidade, filtro) {
     listar(lista, false)
 }
 
-function adicionarBotao(id, novo) {
+function adicionaFiltro(id, novo) {
     /* (4)
      * Recebe o ID e uma nova informação
      * e adiciona uma nova Li na Ul da ID
@@ -139,7 +139,7 @@ function adicionaLinhaTarefas(lista, texto) {
         texto[1].slice(3).join(' ')
     novaLinha.innerHTML = tarefa
     novaLinha.style.overflowWrap = 'break-word'
-    lista.push(tarefa)
+    lista.push(tarefa.trim())
 
     switch (texto[1][2]) {
         case '(A)':
@@ -166,19 +166,19 @@ function atualizarFuncionalidades() {
      */
     document.querySelector('#prioridades').innerText = ''
     Object.keys(listaDePrioridades).forEach(prioridade => {
-        adicionarBotao('prioridades', prioridade)
+        adicionaFiltro('prioridades', prioridade)
     })
     
     
     document.querySelector('#contextos').innerText = ''
     Object.keys(listaDeContextos).forEach(contexto => {
-        adicionarBotao('contextos', contexto)
+        adicionaFiltro('contextos', contexto)
     });
 
 
     document.querySelector('#projetos').innerText = ''
     Object.keys(listaDeProjetos).forEach(projeto => {
-        adicionarBotao('projetos', projeto)
+        adicionaFiltro('projetos', projeto)
     });
 
 }
@@ -274,6 +274,7 @@ function render() {
      * Organiza e ordena as tarefas do listaDeTarefas 
      * Zera o listaDeTarefas para ser ordenado também
      */
+    filtrando = false
     listaDeContextos = {}
     listaDeProjetos = {}
     listaDePrioridades = {}
@@ -299,3 +300,5 @@ window.abrirArquivo = function abrirArquivo(entrada) {
     
     reader.readAsText(file)
 }
+
+window.render = render
