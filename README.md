@@ -18,11 +18,17 @@
 - [x] Bugs corrigidos e transições adicionadas
 
 ## Links importantes
-A idéia foi se inspirar no [Projeto IF968](https://github.com/JDaniloC/Projeto-IF968-2019) só que em JavaScript
+[Projeto IF968](https://github.com/JDaniloC/Projeto-IF968-2019):
 
-O [Color Picker](https://github.com/jillix/piklor.js/) foi usado para o seletor de cores.
+    A idéia foi se inspirar neste projeto, mas dessa vez em JavaScript
 
-Um ótimo curso rápido de JavaScript que incentivou também foi o [Skylab](https://skylab.rocketseat.com.br/?to=%2Fjourney%2Fstarter)
+[Color Picker](https://github.com/jillix/piklor.js/):
+    
+    O objeto que foi usado para o seletor de cores.
 
-<img width='48%' align='left' src='.github/full.png'>
-<img width='48%' align='right' src='.github/edit.png'>
+[Skylab](https://skylab.rocketseat.com.br/?to=%2Fjourney%2Fstarter):
+
+    Um ótimo curso rápido de JavaScript que incentivou também
+
+<img width='47%' align='left' src='.github/full.png'>
+<img width='47%' align='right' src='.github/edit.png'>
