@@ -1,10 +1,10 @@
 # Todo.txt em HTML/CSS/JavaScript
 >> O projeto IF968 em JavaScript, para demonstrar aptidão mínima na linguagem
 
-<img style='width=100%' src='.github/empty.png'>
+<img width='100%' src='.github/empty.png'>
 
 ## Features
-<img style='width:10%; align:right' src='.github/filter.png'>
+<img width='40%' align='right' src='.github/filter.png'>
 
 - [x] Cores para as tarefas com prioridade A-D
 - [x] Espaço para adição de novas tarefas
@@ -22,7 +22,7 @@ A idéia foi se inspirar no [Projeto IF968](https://github.com/JDaniloC/Projeto-
 
 O [Color Picker](https://github.com/jillix/piklor.js/) foi usado para o seletor de cores.
 
-<p style='float:left'>
-  <img style='width:30%' src='.github/full.png'>
-  <img style='width:30%' src='.github/edit.png'>
-</p>
+Um ótimo curso rápido de JavaScript que incentivou também foi o [Skylab](https://skylab.rocketseat.com.br/?to=%2Fjourney%2Fstarter)
+
+<img width='47%' align='left' src='.github/full.png'>
+<img width='47%' align='right' src='.github/edit.png'>
