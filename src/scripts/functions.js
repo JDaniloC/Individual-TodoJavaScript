@@ -7,7 +7,18 @@ let listaDeContextos = {}
 let listaDeProjetos = {}
 const intensidade = 40
 
+// Verificar o deletar (parece está deletando o errado) e parar de filtrar
+
+window.abrirBarra = function abrirBarra() {
+    // Abre/fecha a barra de navegação
+    const barra = document.querySelector('.barra')
+
+    if (barra.style.width == '') { barra.style.width = '0em'}
+    barra.style.width = (barra.style.width == '0em') ? '15em' : '0em'
+}
+
 window.download = function download() {
+    // Faz o download do txt
     var anchor = document.querySelector('#aDownload')
     var arquivo = new Blob(listaDeTarefas.map(tarefa => { 
         return tarefa + '\n'
@@ -18,12 +29,12 @@ window.download = function download() {
 }
 
 window.dragOver = function dragOver(evt) {
+    // Se não colocar isso fica como bloqueado
     evt.preventDefault()
 }
 
 window.drop = function drop(evt) {
-    /* Para carregar o arquivo
-     */
+    // Para carregar o arquivo
     evt.preventDefault()
     var file = evt.dataTransfer.files[0]
     
@@ -177,6 +188,7 @@ function adicionarBotoes(lista, indice) {
      * E devolve um div com ambos.
      */
     var div = document.createElement('div')
+    div.id = 'divTarefa'
 
     var deletar = document.createElement('button')
     deletar.innerText = "Del"
@@ -201,6 +213,10 @@ function adicionarBotoes(lista, indice) {
 }
 
 function mapearFuncionalidades(tarefa, linha) {
+    /*
+     * Adiciona a tarefa na lista de 
+     * prioridade/projeto/contexto
+     */
     if (linha[1][2] != '') {
         if (!listaDePrioridades.hasOwnProperty(linha[1][2])) {
             listaDePrioridades[linha[1][2]] = []
@@ -227,6 +243,11 @@ function mapearFuncionalidades(tarefa, linha) {
 }
 
 function listar(lista, mapear) {
+    /* Reseta a lista de tarefas
+     * converte a lista recebida
+     * e para cada elemento adiciona a tarefa
+     * devolve a lista ordenada
+     */
     document.querySelector('.tarefas').innerText = ''
     let tasks = conversorDeTexto(lista)
 

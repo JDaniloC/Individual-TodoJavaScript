@@ -13,7 +13,21 @@
         <input id="buttonEntrada" type='button' value='Salvar' onclick="salvarTarefa()">
     </div>
 
+    <div class="barra">                        
+        <p>Prioridades</p>
+            <div id="prioridades">
+            </div>
+        <p>Contextos</p>
+            <div id="contextos">
+            </div>
+        <p>Projetos</p>
+            <div id="projetos">
+            </div>
+    </div>
+
     <div class="app">
+        
+        <button class="bbarra" onclick="abrirBarra()">☰ Filtros</button>
 
         <div class="entry">
             <input id='entrada' type="text" placeholder="Adicionar tarefa">
@@ -32,26 +46,10 @@
         </div>
 
         <div class='main'>
-            <section class='esquerda'>
+            <section class='centro'>
                 Tarefas
                 <ul class='tarefas'>
                 </ul>
-            </section>
-    
-            <section class="direita">
-                <div class='tags'> 
-                    <strong>Funcionalidades</strong>
-                        
-                    <p>Prioridades</p>
-                        <div id="prioridades">
-                        </div>
-                    <p>Contextos</p>
-                        <div id="contextos">
-                        </div>
-                    <p>Projetos</p>
-                        <div id="projetos">
-                        </div>
-                </div>
             </section>
         </div>
 

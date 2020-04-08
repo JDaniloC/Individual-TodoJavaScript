@@ -42,6 +42,31 @@ li {
     transition: 1s opacity;
 }
 
+.barra {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.bbarra {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
 .main {
     display: flex;
     justify-content: center;
@@ -58,24 +83,17 @@ li {
     margin: 10px;
     background-color: white;
     position: relative;
-    width: 35%;
+    width: 15em;
     border-radius: 10px;
+    max-width: 15em;
 }
 
-.esquerda {
+.centro {
     font-weight: bold;
     min-height: 10em;
-    width: 15em;
+    min-width: 370px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
-}
-
-.direita {
-    width: 15em;
-    min-height: 10em;
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 2%;
 }
 
 .editar {
@@ -92,7 +110,10 @@ li {
     background-color: #FFF;
     border-style: groove;
     box-shadow: 1px 0px 6px 0px black;
+}
 
+.entry {
+    margin-bottom: 10px;
 }
 
 #aDownload {
@@ -111,8 +132,10 @@ li {
     justify-items: center;
     margin: 10px;
     position: relative;
-    width: 35%;
+    width: 370px;
     border-radius: 10px;
+    max-width: 370px;
+    margin-left: 2%;
 }
 
 #prioridades, #contextos, #projetos {
@@ -145,27 +168,44 @@ li {
 }
 
 #entrada {
+    border: 1px solid;
+    border-radius: 4px;
     width: 50em;
-    border-style: groove;
     height: 2em;
+    width: 51em;
 }
 
 #buttonEntrada {
     height: 2em;
-    border-style: groove;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: dodgerblue;
+    color: #FFF;
+    border-color: black;
+    cursor: pointer;
 }
 
 #buttonTarefa {
     float: right;
     border-style: outset;
+    cursor: pointer;
 }
-
+#buttonEntrada:hover {
+    background-color: royalblue;
+}
 #download:hover {
     background-color: royalblue;
 }
 
-@media screen and (max-width: 780px) {
-    .direita {
-        margin-left: 0%;
+@media screen and (max-width: 730px) {
+    .load_save {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #entrada {
+        width: 18em;
     }
 }

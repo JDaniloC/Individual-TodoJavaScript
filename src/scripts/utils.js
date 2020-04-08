@@ -1,14 +1,3 @@
-/*
-(A) #FF432B
-(B) #E8BA1C
-(C) #691CE8
-(D) #43FF40
-*/
-
-/*
- * (4) Salvar o todo.txt
- */
-
 export default function conversorDeTexto(listaDeString) {
     /* (1)
      * Recebe o texto do arquivo, quebra em linhas
