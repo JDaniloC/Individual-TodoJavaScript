@@ -1,17 +1,9 @@
-/*
-Cores:
-#CC8429
-#806340
-#FFA333
-#FFC680
-#805219
-*/
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 body {
     text-align: center;
-    background-color: #FFA333;
+    background-color: #14c9a6;
     font-size: 25;
     font-family: 'Source Code Pro', 'Nanum Gothic Coding', 'Arial';
 }
@@ -101,8 +93,8 @@ li {
 
     position: absolute;
     z-index: 1;
-    margin-top: 15%;
-    margin-left: 20%;
+    top: 30%;
+    left: 30%;
 
     min-height: 10em;
     max-width: 25em;
@@ -183,6 +175,7 @@ li {
     color: #FFF;
     border-color: black;
     cursor: pointer;
+    padding: 0px 30px;
 }
 
 #buttonTarefa {
@@ -209,3 +202,19 @@ li {
         width: 18em;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .editar {
+        left: 15%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .editar {
+        left: 0%;
+    }
+    #entradaEditar {
+        width: 400px;
+    }
+}
+

@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title> Todo.txt </title>
     <link rel="stylesheet" href="./src/styles/main.css"/>
+    <link rel="stylesheet" href="./src/styles/piklor.css"/>
     <script type='module' src='./src/scripts/functions.js'></script>
+    <script src="./src/scripts/piklor.js"></script>
 </head>
 <body>
     <div class="editar">
@@ -53,7 +55,40 @@
                 </ul>
             </section>
         </div>
-
+        <div class="seletor">
+            <button class="seletorbtn">
+                Mudar cor de fundo
+            </button>
+            <div class="cores"></div>
+            <!--https://github.com/jillix/piklor.js/-->
+        </div>
     </div>
+    <script>
+        window.addEventListener("load", function () {
+            var pk = new Piklor(".cores", [
+                  "#14c9a6"
+                , "#E74C4A"
+                , "#f1c40f"
+                , "#0989a4"
+                , "#34495e"
+                , "#bdc3c7"
+                , "#000"
+                , "#DA4167"
+                , "#f39c12"
+                , "#1B998B"
+                , "#541388"
+                , "#72DDF7"
+                , "#0DAB76"
+                ], {
+                    open: ".seletorbtn"
+                })
+            , componente = pk.getElm("body")
+            ;
+            
+            pk.colorChosen(function (col) {
+                componente.style.backgroundColor = col;
+            });
+        });
+    </script>
 </body>
 </html>
