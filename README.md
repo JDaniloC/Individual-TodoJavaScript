@@ -24,5 +24,5 @@ O [Color Picker](https://github.com/jillix/piklor.js/) foi usado para o seletor 
 
 Um ótimo curso rápido de JavaScript que incentivou também foi o [Skylab](https://skylab.rocketseat.com.br/?to=%2Fjourney%2Fstarter)
 
-<img width='47%' align='left' src='.github/full.png'>
-<img width='47%' align='right' src='.github/edit.png'>
+<img width='49%' align='left' src='.github/full.png'>
+<img width='49%' align='right' src='.github/edit.png'>
