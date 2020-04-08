@@ -4,7 +4,7 @@
 <img style='width=100%' src='.github/empty.png'>
 
 ## Features
-<img style='width:40%; float:right' src='.github/filter.png'>
+<img style='width:10%; align:right' src='.github/filter.png'>
 
 - [x] Cores para as tarefas com prioridade A-D
 - [x] Espaço para adição de novas tarefas
@@ -22,6 +22,7 @@ A idéia foi se inspirar no [Projeto IF968](https://github.com/JDaniloC/Projeto-
 
 O [Color Picker](https://github.com/jillix/piklor.js/) foi usado para o seletor de cores.
 
-
-<img style='width:49%' src='.github/full.png'>
-<img style='width:49%' src='.github/edit.png'>
+<p style='float:left'>
+  <img style='width:30%' src='.github/full.png'>
+  <img style='width:30%' src='.github/edit.png'>
+</p>
