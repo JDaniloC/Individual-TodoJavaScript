@@ -22,6 +22,11 @@
 
     A idéia foi se inspirar neste projeto, mas dessa vez em JavaScript
 
+<a href="https://github.com/JDaniloC/Projeto-IF968-2019" align="right">
+    <p> <i> O repositório inspiração </i> </p>
+  <img align="right" src="https://github-readme-stats.vercel.app/api/pin/?username=jdaniloc&repo=Projeto-IF968-2019" />
+</a>
+
 [Color Picker](https://github.com/jillix/piklor.js/):
     
     O objeto que foi usado para o seletor de cores.
